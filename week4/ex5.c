@@ -1,0 +1,23 @@
+#include <stdio.h>
+#define PI 3.14159
+int main()
+{
+	double r, c, ac, as, v;
+	printf("Nhap vao gia tri ban kinh cua hinh tron: ");
+	scanf(" %f", &r);
+
+	c = 2 * PI * r;
+	printf("Chu vi hinh tron: %f\n", c );
+
+	ac = PI * r * r;
+	printf("Dien tich hinh tron: %f\n", ac );
+
+	as = 4 * PI * r * r;
+	printf("Dien tich xung quanh hinh cau: %f\n", as);
+
+	v = 4.00/3.00 * PI * r * r * r ;
+	printf("The tich hinh cau: %f\n", v );
+
+	return 0;
+	
+}

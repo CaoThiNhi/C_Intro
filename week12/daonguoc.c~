@@ -1,0 +1,35 @@
+/* Cao Thi Nhi - 20132870 */
+// Date Create:
+#include<stdio.h>
+
+void reverseInt(int x){
+  int i;
+  for( i=0; i<=n; i++){
+	 printf("%d", a[i]);
+  }
+  printf("\n");
+}
+int main(){
+
+  int x;
+  int a[20];
+  int i = 0, n;
+  do{
+	  printf("Nhap x: ");\
+	  scanf("%d", &x);
+	  if(x<0)
+  		printf("Nhap sai. X phai la mot so nguyen duong. Nhap lai.\n");
+  }while(x<0);
+
+  while(x/10 != 0){
+	 a[i] = x%10;
+	 i++;
+	 x=x/10;
+	}
+
+  n = i;
+  printf("%d %d %d\n", x, i, n);
+  reverseInt(x);
+
+  return 0;
+}

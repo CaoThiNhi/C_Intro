@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main()
+{
+	char a,b,c,max;
+
+	printf("Nhap vao lan luot 3 ki tu: ");
+	scanf("%s %s %s", &a, &b, &c);
+	if (a<b)
+		if (a<c)
+			printf("%s",a);
+	    else
+			printf("%s",c);
+	else
+				if (b<c)
+			printf("%s",b);
+	    else
+			printf("%s",c);
+
+	
+	return 0;
+}

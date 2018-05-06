@@ -1,0 +1,45 @@
+#include<stdio.h>
+
+int soNguyenTo(int so)
+{
+    int ktra = 0;
+    int i;
+    if (so < 2) ktra =1;
+    else if(so ==2 ) ktra = 0;
+    else
+      for (i = 2; i <= sqrt(so); i ++)
+        {
+          if (so%i == 0)
+            {
+              ktra =1;
+            }
+        }
+    return ktra;
+}
+
+int main(){
+  int so;
+  int ktra;
+  do{
+  printf("Nhap so: ");
+  scanf("%d", &so);
+
+  if(so<0) printf("Nhap sai. Ban phai nhap so nguyen duong. nhap lai!\n");
+  }while(so<0);
+
+       dem = 1;
+
+      printf("Cac so nguyen to trong [1,%ld] la: \n", N);
+      printf("2\t");
+      for(i=3; i<=N; i++){
+        ktra = soNguyenTo(i);
+        if(ktra == 0){
+          printf("%ld\t", i);
+          dem++;
+          if(dem%10 == 0) printf("\n");
+        }
+      }
+      printf("\n");
+
+      re
+}

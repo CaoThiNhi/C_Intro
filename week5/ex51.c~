@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main()
+{
+	double km,mile,inch,met;
+
+	printf("Bo chuyen doi don vi\n");
+	printf("Chuyen tu km sang mile: So km:");
+	scanf("%f", &met);
+	printf("==>Ket qua: %.3f", km*0.621);
+	printf("Chuyen tu mile sang km: So mile:%f",mile);
+	scanf("%f", &mile);
+	printf("==>Ket qua: %.3f", mile*1.609);
+	printf("Chuyen tu meter sang inch: So meter:%f",met);
+	scanf("%f", &met)
+	printf("==>Ket qua: %.3f", met*100/2.54);
+
+	return 0;
+
+	
+}

@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main()
+{
+	char name;
+	printf("nhap chuoi ky tu: ");
+	scanf("%s", &name);
+	printf("chuoi vua nhap: %s", name);
+
+	return 0;
+}

@@ -1,0 +1,31 @@
+/* Cao Thi Nhi - 20132870 */
+// Date Create:
+#include<stdio.h>
+
+int main(){
+  float f;
+  long tien, tienlai, sodu;
+  char name[50];
+  int i, thang;
+
+  printf("Ten tai khoan: ");
+  scanf("%[^\n]s", name);
+  printf("So tien: ");
+  scanf("%ld", &tien);
+  printf("Lai suat: ");
+  scanf("%f", &f);
+  printf("So thang gui: ");
+  scanf("%d", &thang);
+
+  printf("\n\nTai khoan khach hang: %s", name);
+  printf("\nThang\tTien dau ky    \tTien lai       \tSo du          \n");
+  for(i=1; i<=thang; i++){
+    long(tienlai) = tien*f/100;
+    sodu = tien + tienlai;
+    printf("%5d\t%-15ld\t%-15ld\t%-15ld\n", i, tien, tienlai, sodu);
+    tien = sodu;
+  }
+
+
+   return 0;
+}

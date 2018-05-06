@@ -1,0 +1,19 @@
+#include<stdio.h>
+
+float dongnang(float m, float v){
+  return m*v*v/2;
+}
+
+int main(){
+  float m, v, kq;
+
+  printf("Nhap khoi luong (kg): ");
+  scanf("%f", &m);
+  printf("Nhap van toc (m/s): ");
+  scanf("%f", &v);
+
+  kq = dongnang(m, v);
+
+  printf("Dong nang la: %g \n",);
+  return 0;
+}

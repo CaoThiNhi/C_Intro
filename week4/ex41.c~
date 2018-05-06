@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main()
+{
+	int x,y;
+	printf(" Enter a integer: ");
+	scanf(" %d" "\n", x);
+	printf( "Enter a floating-point: ");
+	scanf( " %f\n",y );
+	printf(" input was: %d va %f", x,y)
+
+		return 0;
+}

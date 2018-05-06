@@ -1,0 +1,12 @@
+#include<stdio.h>
+#define arraySize 100
+
+int main(){
+  int s[arraySize];
+  int i;
+
+  for(i=0; i<arraySize; i++ ){
+    srand((unsigned)time(NULL));
+  }
+  return 0;
+}

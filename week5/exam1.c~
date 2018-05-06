@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main()
+{
+	int a;
+	scanf("%d",&a);
+	
+	printf("So du:");
+	scanf("%d", a%7);
+	return 0;
+}

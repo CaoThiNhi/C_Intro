@@ -1,0 +1,62 @@
+#include<stdio.h>
+#define SIZE 5
+
+void rotateLeft(int *a, int f){
+  int i, tmp=0;
+  int b[f], c[SIZE-f];
+  int *ptr1, *ptr2;
+
+  ptr1 = b;
+  ptr2 = c;
+
+  for( i=0; i<f; i++){
+    *(ptr1+i) = *(a+i);
+  }
+
+  /*  for( i=0; i<SIZE-f; i++ ){
+    tmp = *(a+i);
+    *(a+i) = *(a+i+f);
+    *(a+i+f) = tmp;
+    }*/
+
+  for( i=f; i<SIZE; i++ ){
+    tmp = *(a+i);
+    *(ptr2+i-f) = tmp;
+  }
+
+  printf("Day so sau khi dich trai la:\n");
+  for(i=0; i<SIZE-f; i++){
+    printf("%d\t", *(ptr2+i));
+  }
+  for(i=0; i<f; i++){
+    printf("%d\t", *(ptr1+i));
+  }
+  printf("\n");
+}
+
+int main(){
+
+  int a[SIZE], i, f;
+
+  printf("Nhap du lieu cho mang: \n");
+  for( i=0; i<SIZE; i++){
+    printf("a[%d] = ", i);
+    scanf("%d", &a[i]);
+  }
+
+  do{
+    printf("Nhap offset: ");
+    scanf("%d", &f);
+    if(f>=SIZE || f<=0) printf("Offset phai nam trong khoang (0~n)");
+  }while(f>=SIZE || f<=0);
+
+  printf("Mang da nhap la:\n");
+  for( i=0; i<SIZE; i++)
+    printf("%d\t", a[i]);
+
+  printf("\n");
+
+  rotateLeft(a, f);
+
+  return 0;
+}

@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void printMenu(){
+    printf("\n\n1. Input data\n");
+    printf("2. Print the total patient\n");
+    printf("3. Quit\n");
+}
+
+int main()
+{
+    int choice = 0;
+    int guess = 0;
+    while(choice != 3){
+        printMenu();
+        printf("Lua chon cua ban: ");
+        scanf("%d", &choice);
+
+        switch(choice
+               ){
+            case 1 : break;
+
+        }
+    }
+
+    return 0;
+}

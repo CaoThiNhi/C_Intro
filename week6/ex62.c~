@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main()
+{
+	float a;
+	printf("Nhap vao goc toa do: ");
+	scanf("%d", &a);
+
+	if (0 <= a <= 360)
+	{
+		if (a<=90)
+			printf("North (heading) East"); break;
+		if (a<=180)
+			printf("North (180.0 - heading) East"); break;
+		if (a<=270)
+			printf("Sorth (heading - 180.0) Weast"); break;
+		if (a<=360)
+			printf("North (360.0 - heading) Weast"); break;
+}
+	else printf("Thong so vua nhap khong hop le.")
+	return 0;
+}

@@ -1,0 +1,50 @@
+#include<stdio.h>
+#define SIZE 5
+
+void rotateLeft(int *a, int f){
+  int i, tmp=0;
+  int b[f];
+
+  for( i=0; i<f; i++){
+    b[i] = a[i];
+  }
+
+  for( i=0; i<n-f; i++ ){
+    tmp = *(a+i);
+    *(a+i) = *(a+i+f);
+    *(a+i+f) = tmp;
+  }
+
+
+  for(i=0; i<n; i++){
+    printf("a[%d] = %d\t",i, a[i]);
+  }
+  printf("\n");
+}
+
+int main(){
+
+  int a[SIZE], i, f;
+
+  printf("Nhap du lieu cho mang: \n");
+  for( i=0; i<SIZE; i++){
+    printf("a[%d] = ", i);
+    scanf("%d", &a[i]);
+  }
+
+  do{
+    printf("Nhap offset: ");
+    scanf("%d", &f);
+    if(f>=SIZE || f<=0) printf("Offset phai nam trong khoang (0~n)");
+  }while(f>=SIZE || f<=0);
+
+  printf("Mang da nhap la:\n");
+  for( i=0; i<SIZE; i++)
+    printf("%d\t", a[i]);
+
+  printf("\n");
+
+  rotateLeft(a, 2, SIZE);
+
+  return 0;
+}

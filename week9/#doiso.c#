@@ -1,0 +1,81 @@
+#include<stdio.h>
+#define BASE_16 16
+
+void printMenu(){
+  printf("\nDOI SO\n");
+  printf("1.Binary\n");
+  printf("2.Octal\n");
+  printf("3.Hexa\n");
+  printf("4.Exit\n");
+}
+
+void printBinary(int n){
+  int sodu;
+  int binary =0, i =1;
+
+  while(n != 0){
+    sodu = n%2;
+    n = n/2;
+    binary = binary + (sodu*i);
+    i = i*10;
+  }
+
+  printf("Binary: %d\n", binary);
+}
+
+void printOctal(int n){
+
+}
+
+void printHexa(int n){
+index = 0;
+      
+    /* Convert Decimal Number to Hexadecimal Numbers */ 
+    while(decimalNumber != 0) {  
+        remaindar = decimalNumber % BASE_16;  
+        hexadecimalNumber[index] = hexDigits[remaindar];  
+        decimalNumber /= BASE_16;  
+        index++;  
+    }  
+    hexadecimalNumber[index] = '\0';  
+   
+    strrev(hexadecimalNumber);  
+   
+    printf("Hexadecimal Number : %s", hexadecimalNumber);
+}
+
+int main(){
+
+  int num, choice;
+
+  do{
+    printf("Input number decimal: ");
+    scanf("%d", &num);
+
+    if(num<0) printf("\nError. Number is a decimal (number >= 0)\n");
+  }while(num < 0);
+  do{
+    printMenu();
+    printf("Input choice: ");    scanf("%d", &choice);
+
+    switch(choice){
+    case 1 :
+      printBinary(num);
+      break;
+    case 2 :
+      printOctal(num);
+      break;
+    case 3 :
+      printHexa(num);
+      break;
+    case 4 :
+      printf("Exit\n");
+      break;
+    default :
+      printf("Input choice error. Input again. \n");
+      break;
+    }
+  }while(choice != 4);
+
+  return 0;
+}

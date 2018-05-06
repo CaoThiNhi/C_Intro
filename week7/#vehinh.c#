@@ -1,0 +1,28 @@
+/* Cao Thi Nhi - 20132870 */
+// Date Create: 20/3/2018
+
+#include<stdio.h>
+
+int main()
+{
+	int i, j, c;
+
+	printf("Nhap canh: ");
+	scanf("%d", &c);
+    
+	
+
+	return 0;
+}
+
+void menu(){
+  printf("\t VE HINH\n\n");
+  printf("1.Hinh vuong\n");
+  printf("2.Hinh z\n");
+  printf("3.Hinh z nguoc\n");
+  printf("4. Hinh dong ho cat\n");
+  printf("5.Hinh vuong ke hai duong cheo\n");
+  printf("6.Hinh tam giac\n");
+  printf("7.Hinh thoi\n");
+  printf("8.Hinh chu nhat");
+}

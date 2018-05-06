@@ -1,0 +1,36 @@
+#include<stdio.h>
+
+float dongnang(float m, float v){
+  return m*v*v/2;
+}
+
+float mass(){
+
+  do{
+    printf("Nhap khoi luong (kg): ");
+    scanf("%f", &m);
+    if(m<0)printf("Nhap lieu sai m >=0 ! Hay nhap lai! \n");
+  }while(m<0);
+
+
+  return m;
+}
+
+float speed(){
+  printf("Nhap khoi luong (kg): ");
+  scanf("%f", &m);
+   printf("Nhap van toc (m/s): ");
+   scanf("%f", &v);
+
+   return v;
+}
+
+int main(){
+  float m, v, kq;
+
+
+  kq = dongnang(m, v);
+
+  printf("Dong nang la: %g \n", kq);
+  return 0;
+}

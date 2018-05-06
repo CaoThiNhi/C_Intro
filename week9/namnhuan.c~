@@ -1,0 +1,27 @@
+#include<stdio.h>
+
+int namNhuan(int year){
+  int ktra = 0;
+
+  if((year%400 == 0) || (year%4 == 0 && year%100 != 0))
+    ktra =1;
+
+  return ktra;
+}
+int main(){
+  int year, ktra;
+  do{
+    printf("Nhap nam: ");
+    scanf("%d", &year);
+
+    if(year< 0)
+    printf("Nhap sai. Nhap lai!\n");
+  }while(year<0);
+
+  ktra = namNhuan(year);
+
+  if(ktra == 0) printf("Nam %d khong phai la nam nhuan\n", year);
+  else printf("Nam %d la nam nhuan\n", year);
+
+  return 0;
+}

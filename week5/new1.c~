@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main()
+{
+  char a(10);
+  get s(10);
+  
+  printf("Nhap vao mot chuoi ky tu khong chua dau cach:");
+  scanf("%s\n", a);
+  printf("Nhap vao mot chuoi ky tu co chua dau cach:");
+  scanf("%s\n", s);
+  return 0;
+}

@@ -1,0 +1,46 @@
+#include<stdio.h>
+
+void printMenu(){
+  printf("1. Dung may\n");
+  printf("2. Roi may\n");
+  printf("3. Trang thai cac may\n");
+  printf("4. Dien nang tieu thu tich luy tren cac may\n");
+  printf("5. Tong dien nang tieu thu va tien dien thanh toan\n");
+  printf("6. Nhung may duoc dung nhieu nhat va it nhat\n");
+  printf("7. Thoat\n");
+}
+
+int main(){
+  int choice;
+
+  do{
+    printMenu();
+
+    printf("Ban hay chon chuc nang: ");
+    scanf("%d", &choice);
+
+    switch( choice ){
+    case 1 :
+      break;
+    case 2 :
+      break;
+    case 3 :
+      break;
+    case 4 :
+      break;
+    case 5 :
+      break;
+    case 6 :
+      break;
+    case 7 :
+      printf("Thoat\n");
+      break;
+    default :
+      printf("nhap sai. Ban hay nhap lai chuc nang [1~7]\n");
+      break;
+    }
+
+  }while(choice != 7);
+
+  return 0;
+}

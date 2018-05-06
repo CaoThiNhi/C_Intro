@@ -1,0 +1,22 @@
+#include<stdio.h>
+
+#define HANG 5
+#define COT 3
+
+void printMenu(){
+  printf("1.Bat den theo hang\n");
+  printf("2.Bat den theo cot\n");
+  printf("3.Bat den theo vi tri\n");
+  printf("4.Cong suat tieu thu hien thoi\n");
+}
+int main({
+
+    int A[HANG][COT];
+
+    do{
+
+    }while(choice != 5);
+
+
+    return 0;
+  })

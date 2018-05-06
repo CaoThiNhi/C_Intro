@@ -1,0 +1,51 @@
+#include<stdio.h>
+
+void menu(){
+  printf("\n1. Nhap so N \n");
+  printf("2. Liet ke cac so hoan hao [1,N]\n");
+  printf("3. Liet ke cac so nguyen to [1,N]\n");
+  printf("4. Liet ke cac uoc so cua N\n");
+  printf("5. Thoat\n\n");
+}
+int main(){
+  int choice, N, i, j, tong, k;
+
+  do{
+    menu();
+    printf("Moi ban nhap lua chon: ");
+    scanf("%d", &choice);
+
+    switch(choice){
+    case 1 :
+      do{
+      printf("Nhap N: ");
+      scanf("%d", N);
+      if(N < 0) printf("Nhap sai. N la mot so nguyen duong. Nhap lai!\n");
+      }while(N<0);
+      break;
+    case 2 :
+      printf("Cac so hoan hoan cua % d la: \n", N);
+
+      for(i=1; i<=N, i++){
+        tong = 0;
+        for(j=1; j<i; j++){
+          if(i%j == 0) tong = tong + j;
+        }
+        if(tong == i) printf("%d\t",i);
+      }
+      break;
+    case 3 :
+      break;
+    case 4 :
+      break;
+    case 5 :
+      printf("Thoat!\n");
+      break;
+    default :
+      printf("Nhap sai. Moi ban lua chon lai!\n");
+      break;
+    }
+  }while(choice != 5);
+
+  return 0;
+}

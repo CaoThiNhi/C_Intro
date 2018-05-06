@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<time.h>
+#include<stdlib.h>
+#define arraySize 100
+
+int main(){
+  int s[arraySize];
+  int i, dem = 0, tong = 0, tong2 = 0, smallest;
+
+  for(i=0; i<arraySize; i++ ){
+    // srand(time(NULL));
+    s[i] = rand() % 101;
+  }
+
+  printf("100 so nguyen la:\n");
+  for(i=0; i<arraySize; i++){
+    printf("%3d ", s[i]);
+    dem++;
+    if(dem%10 == 0){
+      printf("\n");
+    }
+  }
+
+}

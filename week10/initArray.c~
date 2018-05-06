@@ -1,0 +1,11 @@
+#include<stdio.h>
+#define arraySize 20
+
+int main(){
+  int s[arraySize];
+  int i;
+
+  for(i=0; i<=arraySize/2; i++)
+    s[i]= 2 + 2*i;
+  return 0;
+}

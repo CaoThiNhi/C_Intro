@@ -1,0 +1,15 @@
+#include<stdio.h>
+
+int main(){
+  int diem;
+
+  do{
+    printf("Nhap diem thi hoc ki: ");
+    scanf("%d", &diem);
+    if(0>diem || diem>10)
+      printf("Nhap sai! Diem nam trong khoang [0~10]. Xin moi nhap lai! \n\n");
+    else printf("Diem cua ban la: %d\n", diem);
+  }while(0>diem || diem>10);
+
+  return 0;
+}
