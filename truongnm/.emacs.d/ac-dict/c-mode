@@ -1,0 +1,171 @@
+_Bool
+
+_Complex
+
+_Imaginary
+
+auto
+
+break
+
+case
+char
+const
+continue
+
+default
+do
+do{
+double
+
+else
+enum
+extern
+
+fclose( FILE * stream );
+fclose(  )
+
+feof( FILE * stream );
+feof(  )
+
+fflush( FILE * stream );
+fflush(  )
+
+float
+
+fopen( const char * filename, const char * mode );
+fopen( )
+fopen( , )
+
+for
+for()
+for( ; ; )
+for( ; ; ){
+
+fprintf( FILE * stream, const char * format, ... );
+fprintf
+fprintf( )
+fprintf( , , )
+
+fscanf( FILE * stream, const char * format, ... );
+fscanf
+fscanf( )
+fscanf( , , )
+
+fgets( char * str, int num, FILE * stream );
+fgets
+fgets( )
+fgets ( , , )
+
+fputs( const char * str, FILE * stream );
+fputs
+fputs( )
+fputs( , )
+
+fgetc( FILE * stream );
+fgetc( )
+
+fputc( int character, FILE * stream );
+fputc(  )
+fputc ( , )
+
+fread( void * ptr, size_t size, size_t count, FILE * stream );
+fread(  )
+fread( , , , )
+
+fwrite( const void * ptr, size_t size, size_t count, FILE * stream );
+fwrite(  )
+fwrite( , , ,  )
+
+fseek( FILE * stream, long int offset, int origin );
+fseek(  )
+fseek( , , )
+
+ftell( FILE * stream );
+ftell( )
+
+
+goto
+getc
+getc( )
+
+getchar
+getchar( )
+
+gets
+gets( )
+
+if
+if( )
+if( ){
+
+inline
+int
+
+long
+
+main
+main()
+main(){
+main(int argc, char* argv[]){
+
+printf( const char * format, ... );
+printf
+printf()
+printf("")
+
+putc( int character, FILE * stream );
+putc( )
+putc( , )
+
+puts( const char * str );
+puts(  )
+
+register
+restrict
+return
+return 0
+return 1
+return -1
+
+scanf( const char * format, ... );
+scanf
+scanf()
+scanf("")
+
+short
+signed
+
+sizeof
+sizeof()
+
+static
+struct
+switch
+switch( )
+switch( ){
+
+typedef
+typedef struct
+typedef struct {
+
+union
+unsigned
+
+void
+volatile
+
+while
+while()
+while(){
+while( getchar() != '\n' );
+
+include
+include< >
+include " "
+include<stdio.h>
+include<string.h>
+include<stdlib.h>
+include<system.h>
+include<math.h>
+include<time.h>

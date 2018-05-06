@@ -1,0 +1,225 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+typedef struct
+{
+    int id;
+    char ten[30];
+    int x,y;
+    int r;
+    float kc;
+} station;
+
+int ktms(station a[], int i)
+{
+    int kt=1, m;
+    for (m=0; m<i; m++)
+        if (a[m].id==a[i].id)
+        {
+            kt=0;
+            break;
+        }
+    return kt;
+}
+
+int menu()
+{
+    int ztam;
+    printf("\n---------------------------------");
+    printf("\nMENU\n");
+    printf("1. Nhap moi tram thu phat \n");
+    printf("2. Bo sung tram thu phat \n");
+    printf("3. Xem danh sach tram \n");
+    printf("4. Tinh toan khoang cach \n");
+    printf("5. Thoat chuong trinh \n");
+
+    printf("\nNhap tuy chon chuc nang trong menu (1-5): ");
+    scanf("%d",&ztam);
+
+    return ztam;
+}
+
+void nhapmoi(station a[], int n)
+{
+    int i;
+    printf("\nNhap moi danh sach tram: \n");
+    for (i=0; i<n; i++)
+    {
+        do
+        {
+            printf("\nNhap ma so tram thu %d (phai duong va khong lap lai): ",i+1);
+            scanf("%d",&a[i].id);
+        }
+        while (ktms(a,i)==0 || a[i].id<0);
+
+        printf("Nhap ten truong tram thu %d: ",i+1);
+        fflush(stdin);
+        gets(a[i].ten);
+
+        printf("Nhap hoanh do cua tram: ");
+        scanf("%d",&a[i].x);
+
+        printf("Nhap tung do cua tram: ");
+        scanf("%d",&a[i].y);
+
+        do
+        {
+            printf("Nhap ban kinh phu song cua tram thu %d (1<= r <=100): ",i+1);
+            scanf("%d",&a[i].r);
+        }
+        while (a[i].r<1 || a[i].r>100);
+
+        printf("\n");
+    }
+}
+
+void capnhat(station a[], int n, int d)
+{
+    int i;
+    printf("\nNhap them tram: \n");
+    for (i=n; i<n+d; i++)
+    {
+        do
+        {
+            printf("\nNhap ma so tram thu %d (phai duong va khong lap lai): ",i+1);
+            scanf("%d",&a[i].id);
+        }
+        while (ktms(a,i)==0 || a[i].id<0);
+
+        printf("Nhap ten truong tram thu %d: ",i+1);
+        fflush(stdin);
+        gets(a[i].ten);
+
+        printf("Nhap hoanh do cua tram: ");
+        scanf("%d",&a[i].x);
+
+        printf("Nhap tung do cua tram: ");
+        scanf("%d",&a[i].y);
+
+        do
+        {
+            printf("Nhap ban kinh phu song cua tram thu %d (1<= r <=100: ",i+1);
+            scanf("%d",&a[i].r);
+        }
+        while (a[i].r<1 || a[i].r>100);
+
+        printf("\n");
+    }
+}
+
+void xem(station a[], int n)
+{
+    int i;
+    printf("\nIn ra danh sach tram: \n\n");
+    printf("%-10s%-40s%-15s%-15s\n","ID","Ho ten", "Toa do", "Ban kinh");
+
+    for (i=0; i<n; i++)
+    {
+        printf("%-10d%-40s",a[i].id,a[i].ten);
+        printf("(%d,%d%-18c",a[i].x,a[i].y,')');
+        printf("%-20d\n",a[i].r);
+    }
+}
+void khoangcach(station a[], int n)
+{
+    int i,j;
+    station q;
+    for (i=0; i<n; i++)
+        a[i].kc = sqrt((a[i].x)*(a[i].x)+(a[i].y)*(a[i].y));
+
+    printf("\nIn ra danh sach tram va khoang cach: \n\n");
+    printf("%-10s%-40s%-15s%-15s%-s\n","ID","Ho ten", "Toa do", "Ban kinh", "Khoang cach");
+
+    for (i=0; i<n; i++)
+    {
+        printf("%-10d%-40s",a[i].id,a[i].ten);
+        printf("(%d,%d%-18c",a[i].x,a[i].y,')');
+        printf("%-20d%-.2f\n",a[i].r,a[i].kc);
+    }
+
+    for (i=0; i<n-1; i++)
+        for (j=i+1; j<n; j++)
+            if (a[i].kc<a[j].kc)
+                {
+                    q=a[i];
+                    a[i]=a[j];
+                    a[j]=q;
+                }
+
+    printf("\nIn ra danh sach tram va khoang cach sau khi sap xep giam dan: \n\n");
+    printf("%-10s%-40s%-15s%-15s%-s\n","ID","Ho ten", "Toa do", "Ban kinh", "Khoang cach");
+
+    for (i=0; i<n; i++)
+    {
+        printf("%-10d%-40s",a[i].id,a[i].ten);
+        printf("(%d,%d%-18c",a[i].x,a[i].y,')');
+        printf("%-20d%-.2f\n",a[i].r,a[i].kc);
+    }
+}
+
+int main()
+{
+    station a[50];
+    int z,n=0,d;
+
+    do
+    {
+        z=menu();
+        switch(z)
+        {
+        case 1:
+            {
+            if (n==0)
+                {
+                    printf("\nNhap so luong tram (1<= N <=50): ");
+                    scanf("%d",&n);
+                    while (n<1 || n>50)
+                    {
+                        printf("\nNhap lai so tram cho hop le: ");
+                        scanf("%d",&n);
+                    }
+                    nhapmoi(a,n);
+                }
+
+            break;
+            }
+
+        case 2:
+            {
+                printf("\nBan muon nhap them bao nhieu tram (dam bao tong so tram <=50): ");
+                scanf("%d",&d);
+                while (d<1 || d>50-n)
+                {
+                    printf("\nNhap lai so tram cho hop le: ");
+                    scanf("%d",&d);
+                }
+                capnhat(a,n,d);
+                n+=d;
+                break;
+            }
+
+        case 3:
+            {
+                xem(a,n);
+                break;
+            }
+
+        case 4:
+            {
+                khoangcach(a,n);
+                break;
+            }
+
+        case 5: break;
+
+        default:
+            {
+                printf("\nBan da nhap tuy chon khong hop le! Nhap lai tuy chon! \n");
+                break;
+            }
+        }
+    } while (z!=5);
+
+    return 0;
+}
